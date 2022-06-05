@@ -22,10 +22,10 @@ const getModa = function (numbers){
             maxModa = numberCount;
             result = [item];
         } else if(numberCount === maxModa){
-            result.push(item)
+            result.push(item);
         }
     });
-    let moda = result.filter((element, index) => result.indexOf(element) === index)
+    let moda = result.filter((element, index) => result.indexOf(element) === index);
     return moda;
 }
 console.log(getModa(randomArray));
