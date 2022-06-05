@@ -13,9 +13,11 @@ function getRandomArray (length, min, max) {
 }
 console.log(randomArray);
 
+// 2. Створіть функцію getModa(...numbers) – яка вираховує моду всіх переданих в неї аргументів. НЕЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ 
 const getModa = function (numbers){
     let result = [];
     let maxModa = 0;
+    numbers.filter((item) => Number.isInteger(item));
     numbers.forEach(item => {
         const numberCount = numbers.filter(element => element === item).length;
         if(numberCount > maxModa){
@@ -84,7 +86,7 @@ const getDividedByFive = (numbers) => {
 console.log(getDividedByFive(randomArray));
 
 //  8. Створіть функцію replaceBadWords(string) – яка 1) розіб'є фразу на слова, 2) замінить погані слова на зірочки (*)
-const badWords = ["shit", "fuck"]
+const badWords = ["shit", "fuck"];
 const replaceBadWords = (string) => {
     const result = string.split(" ").map(item => {
         const wordToLowerCase = item.toLowerCase();
@@ -112,18 +114,19 @@ const divideByThree = (word) => {
     return result;
 }
 console.log(divideByThree("Commander"));
-// 10. Створіть функцію generateCombinations(word), яка видасть всі можливі перестановки(унікальні, без повторень) букв в слові.
-const generateCombinations = (word) => {
-    let result = [];
-    let arr = [];
-    word = word.toLowerCase().split("");
-    if(word.length === 2){
-        result.push(word.join(""), word.reverse().join(""))
-    } else if(word.length > 10){
-        return "Передавайте не більше десяти букв";
-    } else{
 
-    }
-    return arr
-}
-console.log(generateCombinations("man"));
+// 10. Створіть функцію generateCombinations(word), яка видасть всі можливі перестановки(унікальні, без повторень) букв в слові.
+// const generateCombinations = (word) => {
+//     let result = [];
+//     let arr = [];
+//     word = word.toLowerCase().split("");
+//     if(word.length === 2){
+//         result.push(word.join(""), word.reverse().join(""))
+//     } else if(word.length > 10){
+//         return "Передавайте не більше десяти букв";
+//     } else{
+
+//     }
+//     return arr
+// }
+// console.log(generateCombinations("man"));
