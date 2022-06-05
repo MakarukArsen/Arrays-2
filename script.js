@@ -121,3 +121,18 @@ const divideByThree = (word) => {
     return result;
 }
 console.log(divideByThree("Commander"));
+// 10. Створіть функцію generateCombinations(word), яка видасть всі можливі перестановки(унікальні, без повторень) букв в слові.
+const generateCombinations = (word) => {
+    let result = [];
+    let arr = [];
+    word = word.toLowerCase().split("");
+    if(word.length === 2){
+        result.push(word.join(""), word.reverse().join(""))
+    } else if(word.length > 10){
+        return "Передавайте не більше десяти букв";
+    } else{
+        
+    }
+    return arr
+}
+console.log(generateCombinations("man"));
