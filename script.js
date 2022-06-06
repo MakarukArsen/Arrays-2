@@ -17,9 +17,9 @@ console.log(randomArray);
 const getModa = function (numbers){
     let result = [];
     let maxModa = 0;
-    numbers = numbers.filter((item) => Number.isInteger(item));
-    numbers.forEach(item => {
-        const numberCount = numbers.filter(element => element === item).length;
+    let numbersArr = numbers.filter((item) => Number.isInteger(item));
+    numbersArr.forEach(item => {
+        const numberCount = numbersArr.filter(element => element === item).length;
         if(numberCount > maxModa){
             maxModa = numberCount;
             result = [item];
