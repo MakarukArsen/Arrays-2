@@ -1,5 +1,5 @@
 // 1. Створіть функцію getRandomArray(length, min, max) – яка повертає масив випадкових цілих чисел.
-const randomArray = getRandomArray(10, 1, 10);
+const randomArray = getRandomArray(length = 10, min = 1, max = 10);
 function getRandomArray (length, min, max) {
     const getRandomNumber = function(min, max){
         const RandomNumber = Math.floor(Math.random() * (++max - min) + min);
@@ -17,7 +17,7 @@ console.log(randomArray);
 const getModa = function (numbers){
     let result = [];
     let maxModa = 0;
-    numbers.filter((item) => Number.isInteger(item));
+    numbers = numbers.filter((item) => Number.isInteger(item));
     numbers.forEach(item => {
         const numberCount = numbers.filter(element => element === item).length;
         if(numberCount > maxModa){
@@ -46,8 +46,7 @@ console.log(getAverage(randomArray));
 
 // 4 Створіть функцію getMedian(...numbers) – яка рахує медіану всіх переданих в неї аргументів. НЕЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
 const getMedian = (numbers) => {
-    numbersArr = numbers.slice().sort((a, b) => a - b);
-    numbersArr = numbersArr.filter((item) => Number.isInteger(item));
+    let numbersArr = numbers.slice().sort((a, b) => a - b).filter((item) => Number.isInteger(item));
     let nextIndex = numbersArr[Math.ceil(numbersArr.length / 2)];
     let prevIndex = numbersArr[Math.floor(numbersArr.length / 2) - 1];
     if(numbersArr.length % 2 !== 0){
